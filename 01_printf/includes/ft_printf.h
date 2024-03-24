@@ -32,15 +32,9 @@
 typedef	struct	s_format
 {
 	char	specifier;
-	int		minus;
-	int		plus;
-	int		width;
-	int		precision;
-	int		neg_precision;
-	int		zero;
-	int		dot;
-	int		space;
 	int		hash;
+	int		space;
+	int		plus;
 }	t_format;
 
 /* function prototypes */
@@ -59,5 +53,7 @@ int 	ft_print_digit(t_format parse_me, va_list ap);
 int	    ft_print_hex(t_format parse_me, va_list ap);
 /* utility functions */
 int     ft_putchar_counter (char c, int fd);
+int     ft_putstr_counter(char *str, int fd);
+int     ft_ulen(unsigned long int n, int base);
 
 #endif

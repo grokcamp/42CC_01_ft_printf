@@ -19,6 +19,8 @@ int ft_printf(const char *format, ...)
     char    *init_spec;
 
     count = 0;
+    if (!format)
+        return (-1);
     va_start(ap, format);
     while (*format)
     {
@@ -46,15 +48,9 @@ t_format	ft_init(void)
 	t_format	form;
 
 	form.specifier = 0;
-	form.minus = 0;
-	form.plus = 0;
-	form.width = 0;
-	form.precision = 0;
-	form.neg_precision = 0;
-	form.zero = 0;
-	form.dot = 0;
-	form.space = 0;
 	form.hash = 0;
+	form.space = 0;
+	form.plus = 0;
 	return (form);
 }
 

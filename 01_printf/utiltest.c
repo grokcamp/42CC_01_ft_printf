@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utiltest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcampbel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 12:39:32 by gcampbel          #+#    #+#             */
-/*   Updated: 2024/03/20 13:51:59 by gcampbel         ###   ########.fr       */
+/*   Created: 2024/03/23 21:58:32 by gcampbel          #+#    #+#             */
+/*   Updated: 2024/03/24 00:56:40 by gcampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int     ft_putchar_counter(char c, int fd)
+int     ft_ulen(unsigned long n, int base);
+char    *ft_uitoa(unsigned int n);
+
+
+char    *ft_uitoa(unsigned int n)
 {
-    return ((int)write(fd, &c, 1));
+    char    *str;
+    int     len;
+
+    len = ft_ulen((unsigned long)n, 10);
+    str = (char *)malloc(len + 1);
+    if (!str)
+        return (NULL);
+    str[len] = '\0';
+    while (len)
+    {
+        str[--len] = (n % 10) + '0';
+        n /= 10;
+    }
+    return (str);
 }
 
-int     ft_putstr_counter(char *str, int fd)
-{
-    if (str)
-        return ((int)write(fd, str, ft_strlen(str)));
-    return (0);
-}
-
-int     ft_ulen(unsigned long int n, int base)
+int     ft_ulen(unsigned long n, int base)
 {
     int len;
 
@@ -37,4 +48,13 @@ int     ft_ulen(unsigned long int n, int base)
         n /= base;
     }
     return (len);
+}
+
+int	main(void)
+{
+	unsigned int	un;
+
+	un = 42;
+	printf("%s", ft_uitoa(un));
+	return (0);
 }

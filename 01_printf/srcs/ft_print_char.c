@@ -19,7 +19,7 @@ int     ft_print_char(t_format form, va_list ap)
 
     count = 0;
     if (form.specifier == 'c')
-        c = va_arg(ap, int);
+        c = va_arg(ap, char);
     else
         c = '%';
     count += ft_putchar_counter(c, 1);

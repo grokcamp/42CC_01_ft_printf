@@ -6,7 +6,7 @@
 /*   By: gcampbel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 19:16:39 by gcampbel          #+#    #+#             */
-/*   Updated: 2024/03/22 15:50:40 by gcampbel         ###   ########.fr       */
+/*   Updated: 2024/03/24 01:25:08 by gcampbel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,37 @@
 
 #include <stdio.h>
 
-// pct test
+// null test
+/*
+int	main(void)
+{
+	//char c = 0;
+	//printf("%c", c);    // returns nothing
+	//char *str = 0;
+	//printf("%s", str);  // returns "(null)"
+	//void *ptr = 0;
+	//printf("%p", ptr);  // returns "(nil)"
+	//printf("%d", '\0'); // returns 0
+	//printf("%i", '\0'); // returns 0
+	//printf("%u", '\0'); // returns 0
+	//printf("%x", '\0'); // returns 0
+	//printf("%X", '\0'); // returns 0
+	return (0);
+}
+*/
 
+
+// pct test
 /*
 int	main(void)
 {
 	printf("\"%%\"", 0x11);
 	return (0);
-}*/
+}
+*/
 
 
 // numconv test
-
 /*
 int	main(void)
 {
@@ -33,8 +52,8 @@ int	main(void)
 	int	*ptr = &val;
 
 	printf("Pointer value: %i\n", *ptr);
-	printf("Pointer address: %p\n", (void *)ptr);
-	printf("Pointer address converted to decimal: %ld\n", (long)ptr);
+	printf("Pointer address: %p\n", (void *)0);
+//	printf("Pointer address converted to decimal: %ld\n", (long)ptr);
 	return (0);
 }
 */
@@ -68,16 +87,16 @@ int	main(void)
 */
 
 // hex test
+
+int	main(void)
+{
+	printf("%#x", 1);
+}
+
+
+// + test
 /*
 int	main(void)
 {
-	printf("% #x", 17);
-}
-*/
-
-// + test
-
-int	main(void)
-{
 	printf("%+x", 42);
-}
+}*/
