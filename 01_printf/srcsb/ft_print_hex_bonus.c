@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf_bonus.h"
 
 static int	ft_puthex(unsigned int n, t_format form);
-/*static int	ft_hash(t_format form);*/
+static int	ft_hash(t_format form);
 
 int	ft_print_hex(t_format form, va_list ap)
 {
 	unsigned long int	n;
 	int					count;
 
-	count = 0;
 	n = va_arg(ap, unsigned int);
 	if (n == 0)
 		return (ft_putchar_counter('0', 1));
+	count = ft_hash(form);
 	count += ft_ulen((unsigned long int)n, 16);
 	ft_puthex(n, form);
 	return (count);
@@ -49,7 +49,7 @@ static int	ft_puthex(unsigned int n, t_format form)
 	return (count);
 }
 
-/*static int	ft_hash(t_format form)
+static int	ft_hash(t_format form)
 {
 	int	count;
 
@@ -60,4 +60,3 @@ static int	ft_puthex(unsigned int n, t_format form)
 		count += ft_putstr_counter("0X", 1);
 	return (count);
 }
-*/

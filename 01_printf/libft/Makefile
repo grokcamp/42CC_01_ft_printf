@@ -73,8 +73,8 @@ $(NAME):	$(OBJS)
 %.o: %.c 
 		$(CC) $(FLAGS) -c $< -o $@
 
-bonus:		$(BONOBJS)
-			@ar rcs $(NAME) $(BONOBJS)
+bonus:		$(OBJS) $(BONOBJS)
+			@ar rcs $(NAME) $(OBJS) $(BONOBJS)
 
 clean:
 			@rm -f $(OBJS) $(BONOBJS)

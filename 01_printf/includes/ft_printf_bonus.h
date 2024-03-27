@@ -12,8 +12,8 @@
 
 /* defining the header file */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
 
 /* including libft.h and all its includes, plus stdarg for VA */
 
@@ -32,7 +32,7 @@
 # define HEX_LOWER	"0123456789abcdef"
 # define HEX_UPPER	"0123456789ABCDEF"
 
-/* flag struct */
+//  flag struct 
 
 typedef struct s_format
 {
@@ -60,9 +60,9 @@ int			ft_putstr_counter(char *str, int fd);
 int			ft_ulen(unsigned long int n, int base);
 /* initializes a struct with all members set to 0*/
 t_format	ft_init(void);
-/* libft utilities */
+/* libft utilities 
 size_t		ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);
-char		*ft_itoa(int n);
+char		*ft_itoa(int n);*/
 
 #endif

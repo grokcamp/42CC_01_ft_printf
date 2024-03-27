@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf_bonus.h"
 
-/*static t_format	ft_parse_flags(const char *format, t_format parse_me);*/
+static t_format	ft_parse_flags(const char *format, t_format parse_me);
 
 int	ft_parser(const char *format, va_list ap)
 {
 	t_format	parse_me;
 
-	parse_me = ft_init();
+	parse_me = ft_parse_flags(format, ft_init());
 	while (!ft_strchr(SPECIFIERS, *format))
 			format++;
 	parse_me.specifier = *format;
 	return (ft_printmaster(parse_me, ap));
 }
 
-/*static t_format	ft_parse_flags(const char *format, t_format parse_me)
+static t_format	ft_parse_flags(const char *format, t_format parse_me)
 {
 	while (!ft_strchr(SPECIFIERS, *format))
 	{
@@ -39,4 +39,3 @@ int	ft_parser(const char *format, va_list ap)
 	}
 	return (parse_me);
 }
-*/

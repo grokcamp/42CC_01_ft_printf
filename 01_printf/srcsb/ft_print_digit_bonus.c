@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf_bonus.h"
 
 static char	*ft_uitoa(unsigned int n);
 static int	ft_putunbr(unsigned int n);
-/*static int	ft_diflags(t_format form, int n);*/
+static int	ft_diflags(t_format form, int n);
 
 int	ft_print_digit(t_format parse_me, va_list ap)
 {
@@ -23,10 +23,10 @@ int	ft_print_digit(t_format parse_me, va_list ap)
 	int				count;
 	int				n;
 
-	count = 0;
 	if (parse_me.specifier == 'd' || parse_me.specifier == 'i')
 	{
 		n = va_arg(ap, int);
+		count = ft_diflags(parse_me, n);
 		nbr = ft_itoa(n);
 		count += ft_putstr_counter(nbr, 1);
 		free(nbr);
@@ -74,7 +74,7 @@ static int	ft_putunbr(unsigned int n)
 	return (count);
 }
 
-/*static int	ft_diflags(t_format form, int n)
+static int	ft_diflags(t_format form, int n)
 {
 	int	count;
 
@@ -84,4 +84,4 @@ static int	ft_putunbr(unsigned int n)
 	if (form.plus == 0 && form.space == 1 && n >= 0)
 		count += ft_putchar_counter(' ', 1);
 	return (count);
-}*/
+}
